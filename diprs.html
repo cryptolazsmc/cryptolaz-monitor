@@ -1,0 +1,45 @@
+<!DOCTYPE html><html lang="es"><head><meta http-equiv="refresh" content="300"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>DIP/RIP S25 vs S10 (PAPER/SIM)</title><style>
+:root{--bg:#0b1324;--card:#111b30;--line:#22304a;--txt:#e5edf7;--mut:#8ea0bb;--g:#22c55e;--r:#f43f5e;--b:#60a5fa}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--txt);font:14px/1.4 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+.wrap{max-width:470px;margin:0 auto;padding:14px 12px 40px}
+.brand{display:flex;align-items:center;gap:10px;margin:4px 0 12px}.logo{width:30px;height:22px}.brand b{font-size:17px;letter-spacing:.5px}.brand small{display:block;color:var(--mut);letter-spacing:3px;font-size:10px}
+nav{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}nav a{color:var(--mut);text-decoration:none;padding:7px 12px;border-radius:10px;font-size:14px}nav a.act{background:#16233d;color:var(--txt);box-shadow:inset 3px 0 0 var(--b)}
+.tog{display:flex;gap:6px;margin:0 0 12px;background:#0f1a2e;border:1px solid var(--line);border-radius:12px;padding:4px}.tog button{flex:1;background:none;border:0;color:var(--mut);padding:8px 6px;border-radius:9px;font:600 13px inherit;cursor:pointer}.tog button.act{background:#1d4ed8;color:#fff}
+h1{font-size:20px;margin:6px 0 10px}h2{font-size:15px;margin:22px 0 10px;color:#cbd5e1}
+.tag{display:inline-flex;gap:8px;align-items:center;border:1px solid var(--line);border-radius:10px;padding:7px 10px;color:var(--mut);font-size:13px;flex-wrap:wrap}
+.tag span{border:1px solid #3b82f6;color:#93c5fd;border-radius:6px;padding:1px 7px;font-size:11px;letter-spacing:1px;font-weight:600}
+.row{display:flex;gap:12px;align-items:center;margin:12px 0}
+.pill{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:12px;font-weight:600;font-size:14px;white-space:nowrap}
+.pill.ok{background:#0f2e1f;border:1px solid #166534;color:#4ade80}.pill.warn{background:#2e260f;border:1px solid #854d0e;color:#facc15}.pill.bad{background:#2e0f17;border:1px solid #9f1239;color:#fb7185}
+.pill i{width:9px;height:9px;border-radius:50%;background:currentColor;display:inline-block}
+.upd{font-size:12px;color:var(--mut)}.upd b{display:block;color:var(--txt);font-size:14px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.tf3{display:grid;grid-template-columns:1fr;gap:10px;margin-top:10px}
+.tfc{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px}.tfh{display:flex;justify-content:space-between;align-items:baseline}.tfh b{font-size:16px}
+.tfc .v{margin:6px 0 4px}.tfc .s{color:var(--mut);font-size:12px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:13px}
+.kv .k{color:var(--mut);font-size:12px}.kv .v{font-size:18px;font-weight:700;font-variant-numeric:tabular-nums}.kv .s,.s{color:var(--mut);font-size:11px}
+.grid2>.kv{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px}
+.big{font-size:28px;font-weight:800}.pos{color:var(--g)}.neg{color:var(--r)}.mut{color:var(--mut)}.small{font-size:12px}.warn{color:#facc15}
+.bar{height:8px;background:#1e293b;border-radius:6px;overflow:hidden;margin:8px 0 4px}.bar>div{height:100%;background:linear-gradient(90deg,#3b82f6,#22c55e)}
+.dot{width:13px;height:13px;border-radius:50%;border:2px solid #334155;display:inline-block;margin-right:5px;vertical-align:middle}.dot.on{background:var(--g);border-color:var(--g)}
+.empty{background:var(--card);border:1px dashed var(--line);border-radius:16px;padding:18px;text-align:center;color:var(--mut)}
+table{width:100%;border-collapse:collapse;font-size:12px;font-variant-numeric:tabular-nums}th,td{padding:7px 4px;border-bottom:1px solid var(--line);text-align:right;vertical-align:top}th{color:var(--mut);font-weight:500}th:nth-child(2),td:nth-child(2){text-align:left}
+tr.sub td{font-size:11px;color:var(--mut);text-align:left;padding-top:0}tr.sub .tp{font-size:10px;padding:0 5px}
+.cmp td:nth-child(2){text-align:right}
+.set div{display:flex;justify-content:space-between;gap:12px;padding:7px 0;border-bottom:1px solid var(--line)}.set div:last-child{border:0}.set span:first-child{color:var(--mut);white-space:nowrap}.set span:last-child{text-align:right}
+.badge{float:right;font-size:11px;border-radius:8px;padding:3px 9px;background:#0f2e1f;color:#4ade80;border:1px solid #166534;font-weight:600;letter-spacing:.5px}
+.tp{display:inline-block;border-radius:8px;padding:2px 9px;font-size:12px;font-weight:700;letter-spacing:.5px;border:1px solid}
+.tp.ok{background:#0f2e1f;border-color:#166534;color:#4ade80}.tp.warn{background:#2e260f;border-color:#854d0e;color:#facc15}.tp.bad{background:#2e0f17;border-color:#9f1239;color:#fb7185}.tp.na{background:#1e293b;border-color:#334155;color:#94a3b8}
+.tfrow{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:7px 0;border-bottom:1px solid var(--line);font-size:13px}.tfrow span:last-child{text-align:right}
+.asof{color:var(--mut);font-size:11px;margin-top:3px}.stalewarn{margin-top:6px;padding:6px 9px;border-radius:9px;background:#2e260f;border:1px solid #854d0e;color:#facc15;font-size:12px;font-weight:600}
+.botsep{margin:26px 0 6px;border-top:2px solid #1d4ed8;padding-top:6px;color:#93c5fd;font-weight:700;letter-spacing:1px;font-size:12px}
+footer{color:#64748b;font-size:11px;margin-top:22px;text-align:center}
+</style></head><body><div class="wrap">
+<div class="brand"><svg class="logo" viewBox="0 0 30 22"><path d="M2 20 L10 6 L15 13 L20 4 L28 20" fill="none" stroke="#22c55e" stroke-linejoin="round" stroke-width="3"/><path d="M2 21 H28" stroke="#60a5fa" stroke-width="2"/></svg><div><b>DIP/RIP</b><small>EVOLUTION</small></div></div>
+<nav id="nav"><a href="index.html">CARDS</a><a href="peers.html">PUMP · RAY · KMNO</a><a href="mnq.html">MNQ</a><a class="act" href="diprs.html">DIP/RIP</a></nav>
+<h1 style="margin-top:0">DIP/RIP · S25 vs S10</h1><div class="tag">CARDS/USDC · PAPER/SIM <span>$0 REAL</span></div>
+<div class="row"><div class="upd">Actualizado<b>2026-10-23 06:39 PM EDT</b></div><div class="upd">Página generada<b>2026-10-23 06:39 PM EDT</b></div></div>
+<div class="card"><span class="badge">ARRANCA</span><div class="empty">Inicio Oct 23 07:00 PM ET. Primeros datos tras el cierre de la primera vela.</div></div>
+<div class="small mut" style="margin-top:6px">PAPER/SIM: simulación sin dinero real. Meta: 20 ciclos por lane, luego decide Lázaro. Muestra pequeña: no concluye nada todavía.</div>
+</div></body></html>
