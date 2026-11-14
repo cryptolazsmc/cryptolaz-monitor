@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="refresh" content="900">
+<title>ShadowSim 6 pool</title>
+<style>
+:root{--bg:#0a1120;--card:#101b31;--inner:#0c1626;--bd:#1e2c49;
+--tx:#e8eefb;--sec:#8fa3c4;--mut:#7e93b8;--faint:#5f7194;
+--green:#2bd98a;--red:#fb4d6d;--amber:#f5b13c;--blue:#2f81f7}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--tx);
+font-family:Inter,-apple-system,Segoe UI,Roboto,sans-serif;
+padding:22px 16px 34px}
+main{max-width:1060px;margin:0 auto}
+h1{font-size:28px;font-weight:800;letter-spacing:-.02em}
+.sub{color:var(--sec);font-size:13px;margin-top:4px;line-height:1.55}
+.sim{display:inline-block;background:#2b2110;color:var(--amber);
+border:1px solid #6b4d15;border-radius:999px;padding:4px 12px;
+font-size:12px;font-weight:800;letter-spacing:.04em;margin-top:10px}
+.stale{background:#2b1219;border:1px solid #6d2436;color:#ffb3c1;
+border-radius:12px;padding:11px 14px;margin-top:14px;font-size:13.5px}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;
+margin:16px 0 14px}
+.kpi{background:var(--card);border:1px solid var(--bd);
+border-radius:14px;padding:13px 14px}
+.kpi label{font-size:11.5px;color:var(--mut);display:block;
+text-transform:uppercase;letter-spacing:.05em}
+.kpi .v{font-size:21px;font-weight:750;margin-top:3px}
+.kpi .c{font-size:11.5px;color:var(--mut);margin-top:2px;line-height:1.45}
+.num{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+font-variant-numeric:tabular-nums}
+.card{background:var(--card);border:1px solid var(--bd);
+border-radius:16px;padding:16px 18px;margin-bottom:14px}
+.card h2{font-size:16.5px;font-weight:750;margin-bottom:10px}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+th{color:var(--faint);font-size:11px;text-transform:uppercase;
+letter-spacing:.06em;text-align:right;padding:5px 8px}
+th:first-child,td:first-child{text-align:left}
+td{padding:8px;border-top:1px solid #1a2947;text-align:right}
+.chip{display:inline-block;border-radius:999px;padding:3px 11px;
+font-size:11.5px;font-weight:800}
+.chip.on{background:#0e2a1c;color:var(--green);border:1px solid #1d5c3a}
+.chip.off{background:#131f38;color:var(--mut);border:1px solid var(--bd)}
+.pos{color:var(--green)}.neg{color:var(--red)}
+.track{height:9px;background:#1a2947;border-radius:5px;margin-top:8px}
+.fillbar{height:9px;border-radius:5px;background:var(--red)}
+.rows{display:grid;grid-template-columns:repeat(3,1fr);gap:9px 16px}
+.kv label{font-size:11px;color:var(--faint);display:block;
+text-transform:uppercase;letter-spacing:.05em}
+.kv .num{font-size:14.5px;font-weight:650}
+.note{font-size:12.5px;color:var(--mut);line-height:1.6}
+footer{color:var(--faint);font-size:11.5px;line-height:1.6;margin-top:4px}
+@media(max-width:900px){.kpis{grid-template-columns:repeat(2,1fr)}
+.rows{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){table{font-size:12px}td,th{padding:6px 5px}}
+</style></head>
+<body>
+<main>
+<header>
+  <h1>ShadowSim 6 pool</h1>
+  <div class="sub">Forward-only paper shadow · origin reference only:
+  ~725 B6_H24 · 6 pools, equal-weight
+  basket when all 6 are ON at a 4h UTC grid</div>
+  <span class="sim">SIMULATION ONLY — NO CAPITAL · NO WALLETS · NO LIVE BOTS</span>
+  
+  <div class="sub" style="margin-top:10px">Status as of
+  <b>2026-11-14 07:40:40 EST / FL time</b> (FL time) ·
+  2026-11-14 12:40:40 UTC · snapshot
+  <span class="num">72420f5daca1</span></div>
+</header>
+
+<div class="kpis">
+  <div class="kpi"><label>Pools ON</label>
+    <div class="v num">1 / 6</div>
+    <div class="c">at the latest grid</div></div>
+  <div class="kpi"><label>Open paper basket</label>
+    <div class="v" style="font-size:17px">NO</div>
+    <div class="c">no overlap — one basket at a time</div></div>
+  <div class="kpi"><label>Closed baskets</label>
+    <div class="v num">0 / 20</div>
+    <div class="c">predeclared sample target n=20</div></div>
+  <div class="kpi"><label>Net — measured costs</label>
+    <div class="v num">+$0.00</div>
+    <div class="c">net at stress 0.28%/side:
+    +$0.00</div></div>
+</div>
+
+<section class="card">
+  <h2>Latest grid — 2026-11-14 12:00:00 UTC UTC ·
+  NOT ELIGIBLE — grid predates the forward start</h2>
+  <table>
+    <tr><th>Pool</th><th>State</th><th>24h return</th><th>Close</th>
+    <th>24h SMA</th><th>Enterable</th><th>Last bar</th></tr>
+    <tr><td><b>SOL</b></td><td><span class='chip off'>OFF</span></td><td class='num neg'>−5.786%</td><td class='num'>75.9273</td><td class='num'>77.8876</td><td>yes</td><td class='num'>2026-11-14 12:38:00 UTC</td></tr><tr><td><b>PUMP</b></td><td><span class='chip off'>OFF</span></td><td class='num neg'>−4.483%</td><td class='num'>0.003283</td><td class='num'>0.003428</td><td>yes</td><td class='num'>2026-11-14 12:37:00 UTC</td></tr><tr><td><b>ZEC</b></td><td><span class='chip off'>OFF</span></td><td class='num neg'>−5.650%</td><td class='num'>901.81</td><td class='num'>931.46</td><td>yes</td><td class='num'>2026-11-14 12:37:00 UTC</td></tr><tr><td><b>PENGU</b></td><td><span class='chip off'>OFF</span></td><td class='num neg'>−3.828%</td><td class='num'>0.005812</td><td class='num'>0.006020</td><td>—</td><td class='num'>2026-11-14 11:52:00 UTC</td></tr><tr><td><b>RAY</b></td><td><span class='chip off'>OFF</span></td><td class='num neg'>−5.358%</td><td class='num'>1.4552</td><td class='num'>1.4871</td><td>no</td><td class='num'>2026-11-14 12:31:00 UTC</td></tr><tr><td><b>KMNO</b></td><td><span class='chip on'>ON</span></td><td class='num pos'>+0.013%</td><td class='num'>0.030356</td><td class='num'>0.030261</td><td>yes</td><td class='num'>2026-11-14 12:39:00 UTC</td></tr>
+  </table>
+  <div class="note" style="margin-top:9px">Signal: a pool is ON when
+  its 24h return is &gt; 0 AND its close is above the trailing 24h SMA
+  of 1m closes. Next grid: 2026-11-14 16:00:00 UTC UTC ·
+  first eligible grid was
+  2026-11-14 16:00:00 UTC UTC (forward start
+  2026-11-14 07:35:10 EST / FL time).</div>
+</section>
+
+<section class="card">
+  <h2>Weekly measured P&amp;L</h2>
+  <div class='note'>No closed week yet — $0.00 measured.</div>
+</section>
+
+<section class="card">
+  <h2>Risk frame</h2>
+  <div class="rows">
+    <div class="kv"><label>Max drawdown (measured)</label>
+      <span class="num">$0.00</span></div>
+    <div class="kv"><label>Stop</label>
+      <span class="num">$2,500.00</span></div>
+    <div class="kv"><label>Basket size</label>
+      <span class="num">$10,000.00</span></div>
+  </div>
+  <div class="track"><div class="fillbar" style="width:0.0%"></div></div>
+  <div class="note" style="margin-top:8px">Drawdown uses
+  0.0% of the predeclared $2,500.00 stop.</div>
+</section>
+
+<section class="card">
+  <h2>Costs &amp; sizing — locked at the $1,667 leg size</h2>
+  <div class="rows">
+    <div class="kv"><label>Basket</label>
+      <span class="num">$10,000.00</span></div>
+    <div class="kv"><label>Per pool (leg)</label>
+      <span class="num">$1,666.67</span></div>
+    <div class="kv"><label>Gas per leg</label>
+      <span class="num">$0.04</span></div>
+    <div class='kv'><label>SOL measured cost / side</label><span class='num'>0.006%</span></div><div class='kv'><label>PUMP measured cost / side</label><span class='num'>0.022%</span></div><div class='kv'><label>ZEC measured cost / side</label><span class='num'>0.006%</span></div><div class='kv'><label>PENGU measured cost / side</label><span class='num'>0.029%</span></div><div class='kv'><label>RAY measured cost / side</label><span class='num'>0.077%</span></div><div class='kv'><label>KMNO measured cost / side</label><span class='num'>0.066%</span></div>
+  </div>
+  <div class="note" style="margin-top:9px">Measured costs are Jupiter
+  quotes taken at the ~$1,667 leg size (locked 2026-11-14) — NOT the
+  older ~$167-size figures; slippage is higher at $1,667 and gas is
+  not scaled. Mean measured cost
+  0.0343%
+  per side (percent values exactly as published by the source
+  snapshot).</div>
+</section>
+
+<footer>Source: Aura's sanitized status snapshot
+(shared_evidence/aura/shadowsim_6_pool/status.json on the Shared
+Evidence Plane), rendered by Sentinel's standalone builder for Aura
+packet AURA-SENTINEL-SHADOWSIM-6-POOL-063. Paper simulation of a
+research hypothesis — it asserts no validated edge. Page refreshes
+hourly from the latest snapshot.</footer>
+</main>
+</body></html>
